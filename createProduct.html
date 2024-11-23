@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+    <link rel="stylesheet" href="css/createProduct.css">
+    <script src="js/createProduct.js" defer></script>
+</head>
+<body>
+    <div class="center-container">
+        <section>
+            <h1>Create Product</h1>
+            <form id="createProductForm">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="shortDescription">Short Description:</label>
+                <input type="text" id="shortDescription" required>
+
+                <label for="fullDescription">Full Description:</label>
+                <textarea id="fullDescription" required></textarea>
+
+                <label for="brand">Brand:</label>
+                <input type="text" id="brand" required>
+
+                <label for="category">Category:</label>
+                <input type="text" id="category" required>
+
+                <label for="listPrice">List Price:</label>
+                <input type="number" id="listPrice" required>
+
+                <label for="discountPercent">Discount Percent:</label>
+                <input type="number" id="discountPercent">
+
+                <div class="checkbox-group">
+                    <label for="enabled">Enabled:</label>
+                    <input type="checkbox" id="enabled">
+
+                    <label for="inStock">In Stock:</label>
+                    <input type="checkbox" id="inStock">
+                </div>
+
+                <label for="length">Length (cm):</label>
+                <input type="number" id="length">
+
+                <label for="width">Width (cm):</label>
+                <input type="number" id="width">
+
+                <label for="height">Height (cm):</label>
+                <input type="number" id="height">
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight">
+
+                <label for="cost">Cost:</label>
+                <input type="number" id="cost">
+
+                <label for="mainImage">Main Image (PNG):</label>
+                <input type="file" id="mainImage" accept=".png" required>
+
+                <label for="featuredImages">Featured Images (PNG):</label>
+                <input type="file" id="featuredImages" accept=".png" multiple>
+
+                <h2>Product Details</h2>
+
+                <div id="productDetails">
+                    <input type="text" placeholder="Detail Name">
+                    <input type="text" placeholder="Detail Value">
+                    <button type="button" id="addDetailBtn">Add Detail</button>
+                </div>
+
+                <button type="submit">Create Product</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

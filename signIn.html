@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/signIn.css">
+</head>
+<body>
+    <div class="center-container">
+        <section>
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" required>
+
+                <button type="submit">Entrar</button>
+            </form>
+            <div id="loginStatus">Email ou senha inválidos. Tente novamente.</div>
+            <p>Don't have an account? <a href="signUp.html">Register</a></p>
+        </section>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const loginStatus = document.getElementById('loginStatus');
+
+        loginForm.onsubmit = function(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const authenticatedUser = users.find(
+                (user) => user.email === email && user.password === password
+            );
+
+            if (authenticatedUser) {
+                localStorage.setItem('authenticatedUser', JSON.stringify(authenticatedUser));
+                window.location.href = 'dashboard.html';
+            } else {
+                loginStatus.style.display = 'block';
+            }
+        };
+    </script>
+</body>
+</html>
